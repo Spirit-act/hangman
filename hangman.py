@@ -25,7 +25,7 @@ class Hangman:
         self.drawing = 0
 
     def readwordlist(self):
-        return files.read('words.txt')
+        return files.read(os.path.dirname(os.path.realpath(__file__)) + '/words.txt')
 
     def getword(self):
         length = int(input('Word length: '))
@@ -71,7 +71,7 @@ class Hangman:
         exit()
 
     def run(self):
-        print(self.word)
+        #print(self.word)
         self.printspaces(self.word)
         while True:
             char = input('Enter your first Query: ')
@@ -96,7 +96,7 @@ class Hangman:
                 elif self.drawing == 6:
                     print(art.POS_SEVEN)
                 else:
-                    print('The man is dead')
+                    print('The man is dead. But the word was: ' + self.word)
                     time.sleep(3)
                     self.close()
                 self.drawing += 1
