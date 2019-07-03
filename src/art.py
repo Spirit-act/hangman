@@ -1,8 +1,14 @@
-MAIN = """
-========================================== Console Hangman ==========================================
-# You can Play against the Maschine
-=====================================================================================================
-"""
+import os
+
+
+def startart():
+    rows, columns = os.popen('stty size', 'r').read().split()
+    columns = int(columns)
+    half = ((columns - 18) / 2)
+    print('=' * int(half) + ' Terminal Hangman ' + '=' * int(half))
+    print('# You can Play against the Maschine')
+    print('=' * columns)
+
 
 POS_ONE = """  
 +-------+

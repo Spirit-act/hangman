@@ -19,7 +19,7 @@ import time
 
 class Hangman:
     def __init__(self):
-        print(art.MAIN)
+        art.startart()
         self.word = self.getword()
         self.empty = '_'*len(self.word)
         self.drawing = 0
